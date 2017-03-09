@@ -11,10 +11,10 @@ npm install
 Add css
 
 ## Tests
-** Run test **
+**Run test**
 npm run test
 
-** For continious monitoring: **
+**For continious monitoring:**
 npm rum test:watch
 
 
