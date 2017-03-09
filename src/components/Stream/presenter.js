@@ -1,6 +1,7 @@
 import React from 'react';
+import { CLIENT_ID } from '../../constants/auth';
 
-const Stream = ({ user, tracks = [], onAuth, onPlay }) => { 
+const Stream = ({ user, tracks = [], activeTrack, onAuth, onPlay }) => { 
   return (
     <div>
       <div>
@@ -23,6 +24,12 @@ const Stream = ({ user, tracks = [], onAuth, onPlay }) => {
           })
         }
       </div>
+      {
+        console.log("from presenter.js: activeTrack: ", activeTrack);
+        activeTrack ?
+          <audio id="audio" ref="audio" src="{`${activeTrack.origin.stream_url}?client_id=${CLIENT_ID}`}"></audio> :
+          null
+      }
     </div>
   );
 }
